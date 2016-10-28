@@ -1,2 +1,28 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if crasher_signed_in? %>
+	<h3>Available Crashings:</h3>
+	<a>Anca Fodor - UIC</a>
+	  	<button type="submit" value="Submit">Signup</button><br>
+	  	<p>Date: Jan 5, 2017</p>
+	  	<p>Exchange: clean house</p>
+	  	<p>Location: UIC</p>
+	  	<p>Gender: Female</p>
+	  	<p>Age: 30</p>
+	  	<p>Major: Economics</p>
+	  	<p>Interests: Skydiving</p>
+	<a>Thuy Ngo - SAIC</a>
+		<button type="submit" value="Submit">Signup</button><br>
+	  	<p>Date: Mar 15, 2017</p>
+	  	<p>Exchange: house swap</p>
+	  	<p>Location: SAIC</p>
+	  	<p>Gender: Female</p>
+	  	<p>Age: 30</p>
+	  	<p>Major: Fine Arts</p>
+	  	<p>Interests: Ceramics</p>		
+	<a>Jake Fishbain - UIUC</a>
+		<button type="submit" value="Submit">Signup</button><br>
+	<a>Jillian Somera - CCC</a>
+		<button type="submit" value="Submit">Signup</button><br>
+
+<% else %>
+	<h3>Please log in to see available crashings!</h3>
+<% end %>

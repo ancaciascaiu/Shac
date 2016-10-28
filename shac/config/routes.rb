@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  root :to => "home#index"
   devise_for :crashers
   devise_for :hosts
   # The priority is based upon order of creation: first created -> highest priority.

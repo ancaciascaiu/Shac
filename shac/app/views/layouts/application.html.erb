@@ -15,7 +15,7 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<p class="navbar-text pull-right">
+<p class="navbar-text pull-right nav-header">
 <% if host_signed_in? %>
   Logged in as <strong><%= current_host.email %></strong>.
   <%= link_to 'Edit profile', edit_host_registration_path, :class => 'navbar-link' %> |

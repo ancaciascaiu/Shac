@@ -8,6 +8,30 @@
 </head>
 <body>
 
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<p class="navbar-text pull-right">
+<% if host_signed_in? %>
+  Logged in as <strong><%= current_host.email %></strong>.
+  <%= link_to 'Edit profile', edit_host_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_host_session_path, method: :delete, :class => 'navbar-link'  %>
+<% elsif crasher_signed_in? %>
+	Logged in as <strong><%= current_crasher.email %></strong>.
+  <%= link_to 'Edit profile', edit_crasher_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_crasher_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up as host", new_host_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login as host", new_host_session_path, :class => 'navbar-link'  %>
+  <%= link_to "Sign up as crasher", new_crasher_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login as crasher", new_crasher_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+
 <%= yield %>
 
 </body>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  root :to => "home#index"
-  devise_for :crashers 
+  root "home#index"
+
+  devise_for :crashers
   resources :crashers, :only => [:create, :new, :show, :edit]
 
   devise_for :hosts
